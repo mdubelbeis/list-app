@@ -3,7 +3,6 @@ import React from 'react';
 import TodoItem from './TodoItem';
 
 import RenderList from '../../components/ui/RenderList';
-import RenderListItem from '../../components/ui/RenderListItem';
 
 interface TodoListProps {
   items: { id: number; task: string; isDone: boolean }[];
@@ -13,11 +12,11 @@ const TodoList: React.FC<TodoListProps> = ({ items, onDelete }) => {
   return (
     <RenderList>
       {items.map((item) => (
-        <RenderListItem
+        <TodoItem
           key={item.id}
           id={item.id}
           onDelete={onDelete}
-          item={item.task}
+          todo={item.task}
         />
       ))}
     </RenderList>

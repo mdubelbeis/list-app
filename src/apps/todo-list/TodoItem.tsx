@@ -9,7 +9,6 @@ import classes from '../../animations/fadeEffect.module.css';
 interface TodoItemProps {
   todo: string;
   id: number;
-
   onDelete: (id: number) => void;
 }
 
