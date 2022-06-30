@@ -4,6 +4,7 @@ import DUMMY_DATA from '../../data'; // FAKE DATA FILE
 
 import NewTodo from './NewTodo';
 import TodoList from './TodoList';
+import Header from '../../components/ui/Header';
 
 interface TodoAppProps {}
 
@@ -27,7 +28,6 @@ const TodoApp: React.FC<TodoAppProps> = () => {
   };
 
   return (
-    // HEADER - to Return Home
     <div>
       <NewTodo onSubmit={handleNewTodo} />
       <TodoList items={todos} onDelete={handleDeleteTodo} />

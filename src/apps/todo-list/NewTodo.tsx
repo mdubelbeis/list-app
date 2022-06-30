@@ -52,7 +52,11 @@ const NewTodo: React.FC<NewTodoProps> = ({ onSubmit }) => {
         )}
       </div>
       <div className="flex gap-2">
-        <Button type="submit" paddingX="px-8 md:px-12">
+        <Button
+          type="submit"
+          paddingX="px-8 md:px-8"
+          paddingY="py-2 md:py-4"
+        >
           ADD
         </Button>
         {/* <Button type="reset">RESET</Button> */}

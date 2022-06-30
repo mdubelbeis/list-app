@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 
 import AppOptions from './apps/AppOptions.js';
 import TodoApp from './apps/todo-list/TodoApp';
 import GroceryApp from './apps/grocery-list/GroceryApp';
 import ChoresApp from './apps/chores-list/ChoresApp';
+import Header from './components/ui/Header';
 
 const App: React.FC = () => {
   const [app, setApp] = useState('options');
@@ -17,17 +18,39 @@ const App: React.FC = () => {
     switch (app) {
       case 'options':
         renderApp = (
-          <AppOptions onAppSelection={handleAppSelection} />
+          <>
+            <Header onClick={handleAppSelection}>
+              <AppOptions onAppSelection={handleAppSelection} />
+            </Header>
+          </>
         );
         break;
       case 'todoApp':
-        renderApp = <TodoApp />;
+        renderApp = (
+          <>
+            <Header onClick={handleAppSelection}>
+              <TodoApp />
+            </Header>
+          </>
+        );
         break;
       case 'groceryApp':
-        renderApp = <GroceryApp />;
+        renderApp = (
+          <>
+            <Header onClick={handleAppSelection}>
+              <GroceryApp />;
+            </Header>
+          </>
+        );
         break;
       case 'choresApp':
-        renderApp = <ChoresApp />;
+        renderApp = (
+          <>
+            <Header onClick={handleAppSelection}>
+              <ChoresApp />
+            </Header>
+          </>
+        );
     }
     return renderApp;
   };

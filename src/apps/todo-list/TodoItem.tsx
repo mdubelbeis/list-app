@@ -58,6 +58,8 @@ const TodoItem: React.FC<TodoItemProps> = ({
             type="button"
             id="trash"
             paddingX="px-4 md:px-8"
+            paddingY="py-2"
+            width="w-auto"
           >
             <TrashIcon />
           </Button>
