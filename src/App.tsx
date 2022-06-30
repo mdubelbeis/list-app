@@ -56,7 +56,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col max-w-2xl mx-auto">
+    <div className="flex flex-col max-w-3xl mx-auto">
       {getApp(app)}
     </div>
   );
