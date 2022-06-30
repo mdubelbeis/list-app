@@ -43,22 +43,22 @@ const TodoItem: React.FC<TodoItemProps> = ({
   return (
     <li
       onClick={handleCompleteTodo}
-      className={`${completed} ${fadeEffect} relative flex justify-center items-center border-2 border-black rounded p-2 text-center hover:cursor-pointer`}
+      className={`${completed} ${fadeEffect} relative flex justify-center items-center border-2 border-black rounded p-10 sm:p-8 md:p-6 text-center hover:cursor-pointer`}
     >
       {fadeIn ? (
-        <TodoText>{todo}</TodoText>
+        <TodoText className="text-xl tracking-wider">{todo}</TodoText>
       ) : (
         <TodoText className="text-green-600">GOOD JOB!</TodoText>
       )}
 
       {isComplete && (
-        <span className="absolute right-1 animate-pulse">
+        <span className="absolute right-8 animate-pulse">
           <Button
             onClick={handleDeleteTodo}
             type="button"
             id="trash"
-            paddingX="px-4 md:px-8"
-            paddingY="py-2"
+            paddingX="px-6 md:px-8"
+            paddingY="py-4"
             width="w-auto"
           >
             <TrashIcon />
