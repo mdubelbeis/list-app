@@ -18,10 +18,7 @@ const Header: React.FC<HeaderProps> = ({ onClick, children }) => {
           <Button
             type="button"
             onClick={handleButtonClick}
-            paddingX="px-4"
-            paddingY="py-2"
-            bgColor="bg-black"
-            txtColor="text-white"
+            id="homeBtn"
           >
             HOME
           </Button>

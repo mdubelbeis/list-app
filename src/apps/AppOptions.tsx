@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import QuestionMark from '../components/icons/QuestionMark';
 
 import Button from '../components/ui/Button';
 
@@ -22,37 +23,34 @@ const AppOptions: React.FC<AppOptionsProps> = ({
           <h1>CHOOSE YOUR LIST!</h1>
         </header>
       </section>
-      <section>
+      <main>
         <div className="flex flex-col items-center justify-center gap-4 w-full">
           <Button
             type="button"
             onClick={() => handleButtonClick('todoApp')}
-            paddingX="px-6"
-            paddingY="py-6"
-            width="w-6/12"
+            id="optionsBtn"
           >
             TODO APP
           </Button>
           <Button
             type="button"
             onClick={() => handleButtonClick('choresApp')}
-            paddingX="px-6"
-            paddingY="py-6"
-            width="w-6/12"
+            id="optionsBtn"
           >
             CHORES LIST
           </Button>
           <Button
             type="button"
             onClick={() => handleButtonClick('groceryApp')}
-            paddingX="px-6"
-            paddingY="py-6"
-            width="w-6/12"
+            id="optionsBtn"
           >
             GROCERY LIST
           </Button>
         </div>
-      </section>
+      </main>
+      {/* <div className="absolute bottom-10 right-10">
+        <QuestionMark />
+      </div> */}
     </div>
   );
 };

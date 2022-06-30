@@ -48,7 +48,9 @@ const TodoItem: React.FC<TodoItemProps> = ({
       {fadeIn ? (
         <TodoText className="text-xl tracking-wider">{todo}</TodoText>
       ) : (
-        <TodoText className="text-green-600">GOOD JOB!</TodoText>
+        <TodoText className="text-green-600 text-xl">
+          GOOD JOB!
+        </TodoText>
       )}
 
       {isComplete && (
@@ -56,10 +58,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
           <Button
             onClick={handleDeleteTodo}
             type="button"
-            id="trash"
-            paddingX="px-6 md:px-8"
-            paddingY="py-4"
-            width="w-auto"
+            id="trashBtn"
           >
             <TrashIcon />
           </Button>

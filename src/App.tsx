@@ -1,16 +1,25 @@
 import React, { useState, Fragment } from 'react';
+import ReactDOM from 'react';
 
 import AppOptions from './apps/AppOptions.js';
 import TodoApp from './apps/todo-list/TodoApp';
 import GroceryApp from './apps/grocery-list/GroceryApp';
 import ChoresApp from './apps/chores-list/ChoresApp';
 import Header from './components/ui/Header';
+import QuestionMark from './components/icons/QuestionMark.js';
+import HelpModal from './components/HelpModal.js';
+import ModalBackdrop from './components/ui/ModalBackdrop.js';
 
 const App: React.FC = () => {
   const [app, setApp] = useState('options');
+  const [showHelpModal, setShowHelpModal] = useState(false);
 
   const handleAppSelection = (app: string) => {
     setApp(app);
+  };
+
+  const handleShowHelpModal = () => {
+    setShowHelpModal(true);
   };
 
   const getApp = (app: React.ReactNode) => {
@@ -18,11 +27,7 @@ const App: React.FC = () => {
     switch (app) {
       case 'options':
         renderApp = (
-          <>
-            <Header onClick={handleAppSelection}>
-              <AppOptions onAppSelection={handleAppSelection} />
-            </Header>
-          </>
+          <AppOptions onAppSelection={handleAppSelection} />
         );
         break;
       case 'todoApp':
@@ -56,9 +61,24 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col max-w-3xl mx-auto">
-      {getApp(app)}
-    </div>
+    <>
+      <div className="h-screen flex flex-col justify-between max-w-3xl mx-auto">
+        <div>{getApp(app)}</div>
+        <div
+          className="self-center mb-20"
+          onClick={handleShowHelpModal}
+        >
+          <QuestionMark />
+        </div>
+      </div>
+
+      {showHelpModal && (
+        <div className="flex justify-center">
+          <ModalBackdrop />
+          <HelpModal />
+        </div>
+      )}
+    </>
   );
 };
 
