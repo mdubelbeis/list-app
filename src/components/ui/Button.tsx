@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const homeBtn = id === 'homeBtn' && 'px-4 py-2';
 
-  const helpModalBtn = id === 'helpModalBtn' && 'text-sm px-4 py-2';
+  const helpModalBtn = id === 'helpModalBtn' && 'text-sm px-4 py-2 ';
 
   return (
     <button

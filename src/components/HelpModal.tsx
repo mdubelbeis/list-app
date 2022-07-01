@@ -1,12 +1,14 @@
 import React from 'react';
 import Button from './ui/Button';
 
-interface HelpModalProps {}
+interface HelpModalProps {
+  onClick: () => void;
+}
 
-const HelpModal: React.FC<HelpModalProps> = () => {
+const HelpModal: React.FC<HelpModalProps> = ({ onClick }) => {
   return (
-    <div className="absolute max-w-xl w-11/12 -translate-y-72 bg-white p-10 rounded z-50">
-      <div className="bg-white flex flex-col items-center justify-between text-center space-y-4">
+    <div className="absolute top-[20%] max-w-xl w-11/12 bg-white p-10 rounded z-50">
+      <div className="bg-white flex flex-col items-center justify-between text-center space-y-10">
         <header className="">
           <h1>HELP MODAL</h1>
         </header>
@@ -18,7 +20,7 @@ const HelpModal: React.FC<HelpModalProps> = () => {
         </div>
         <footer>
           <div>
-            <Button type="button" id="helpModalBtn">
+            <Button type="button" id="helpModalBtn" onClick={onClick}>
               Close
             </Button>
           </div>

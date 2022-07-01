@@ -19,7 +19,7 @@ const App: React.FC = () => {
   };
 
   const handleShowHelpModal = () => {
-    setShowHelpModal(true);
+    setShowHelpModal(!showHelpModal);
   };
 
   const getApp = (app: React.ReactNode) => {
@@ -27,7 +27,23 @@ const App: React.FC = () => {
     switch (app) {
       case 'options':
         renderApp = (
-          <AppOptions onAppSelection={handleAppSelection} />
+          <div className="flex flex-col justify-between h-screen items-center">
+            <AppOptions onAppSelection={handleAppSelection} />
+            {!showHelpModal && (
+              <div
+                className="self-center mb-20"
+                onClick={handleShowHelpModal}
+              >
+                <QuestionMark />
+              </div>
+            )}
+            {showHelpModal && (
+              <div className="flex justify-center">
+                <ModalBackdrop onClick={handleShowHelpModal} />
+                <HelpModal onClick={handleShowHelpModal} />
+              </div>
+            )}
+          </div>
         );
         break;
       case 'todoApp':
@@ -64,20 +80,7 @@ const App: React.FC = () => {
     <>
       <div className="h-screen flex flex-col justify-between max-w-3xl mx-auto">
         <div>{getApp(app)}</div>
-        <div
-          className="self-center mb-20"
-          onClick={handleShowHelpModal}
-        >
-          <QuestionMark />
-        </div>
       </div>
-
-      {showHelpModal && (
-        <div className="flex justify-center">
-          <ModalBackdrop />
-          <HelpModal />
-        </div>
-      )}
     </>
   );
 };
