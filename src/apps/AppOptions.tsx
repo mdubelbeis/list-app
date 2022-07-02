@@ -17,10 +17,10 @@ const AppOptions: React.FC<AppOptionsProps> = ({
   };
 
   return (
-    <div className="flex flex-col gap-10">
-      <section className="bg-black rounded text-white text-center text-6xl p-6">
+    <div className="flex flex-col gap-10 w-full">
+      <section className="rounded text-black text-center text-4xl p-4 w-full tracking-widest">
         <header>
-          <h1>CHOOSE YOUR LIST!</h1>
+          <h1>OBLIGATIONS</h1>
         </header>
       </section>
       <main>
@@ -30,7 +30,7 @@ const AppOptions: React.FC<AppOptionsProps> = ({
             onClick={() => handleButtonClick('todoApp')}
             id="optionsBtn"
           >
-            TODO APP
+            TODO LIST
           </Button>
           <Button
             type="button"
