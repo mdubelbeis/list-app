@@ -54,7 +54,7 @@ const TodoItem: React.FC<TodoItemProps> = ({
       )}
 
       {isComplete && (
-        <span className="absolute right-8 animate-pulse">
+        <span className="absolute right-4 md:right-8 animate-pulse">
           <Button
             onClick={handleDeleteTodo}
             type="button"
