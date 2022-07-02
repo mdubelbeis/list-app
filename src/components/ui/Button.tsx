@@ -13,9 +13,12 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   id,
 }) => {
-  const optionBtns = id === 'optionsBtn' && 'px-6 py-6 w-6/12';
+  const optionBtns =
+    id === 'optionsBtn' &&
+    'px-2 py-6 w-6/12 text-lg border-2 bg-white text-black border-black hover:bg-black hover:text-white';
 
-  const trashBtns = id === 'trashBtn' && 'px-6 md:px-8 py-4 w-auto';
+  const trashBtns =
+    id === 'trashBtn' && 'px-4 py-4 md:px-8 md:py-4 w-auto';
 
   const addTodoBtn =
     id === 'addTodoBtn' && 'px-8 md:px-8 py-2 md:py-4 w-full';
@@ -27,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      className={`rounded tracking-wider text-xl bg-black text-white ${addTodoBtn} ${optionBtns} ${homeBtn} ${trashBtns} ${helpModalBtn}`}
+      className={`rounded tracking-wider text-md bg-black text-white ${addTodoBtn} ${optionBtns} ${homeBtn} ${trashBtns} ${helpModalBtn}`}
       onClick={onClick}
     >
       {children}
